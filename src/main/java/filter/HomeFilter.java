@@ -24,7 +24,7 @@ public class HomeFilter implements Filter {
         // Kiểm tra nếu truy cập trống "/"
         if (requestURI.equals("/")) {
             // Thực hiện chuyển hướng đến trang khác
-            httpResponse.sendRedirect("/thoitiet?province=ho-chi-minh"); // Thay "/new-page" bằng URL muốn chuyển hướng
+            httpResponse.sendRedirect("/thoitiet?province=tp-ho-chi-minh"); // Thay "/new-page" bằng URL muốn chuyển hướng
 
             return;
         }

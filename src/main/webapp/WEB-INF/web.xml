@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Dự Báo Thời Tiết Theo Giờ</display-name>
+  <display-name>Weather Forecast Website</display-name>
   <filter>
     <filter-name>HomeFilter</filter-name>
     <filter-class>filter.HomeFilter</filter-class>
