@@ -12,7 +12,7 @@ public class WeatherMartDAO {
     public static ArrayList<Mart> getDataWithProvince(String provinceName) {
         ArrayList<Mart> res = new ArrayList<>();
         try {
-            Connection connection = JDBCUtil.getConnection();
+            Connection connection = JDBCUtil.getConnection("datamart");
             String sql = "SELECT * FROM weather_mart WHERE province=?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, provinceName);

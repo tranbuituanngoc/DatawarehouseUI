@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCUtil {
-    public static Connection getConnection() {
+    public static Connection getConnection(String database) {
         Connection connection = null;
 
         try {
@@ -16,7 +16,7 @@ public class JDBCUtil {
             // register Driver (notNeed). Từ JDK 9 thì không cần đkí nữa chỉ cần tạo Driver
             DriverManager.registerDriver(driver);
             //link
-            String urlString = "jdbc:mysql://localhost:3306/projectdw";
+            String urlString = "jdbc:mysql://localhost:3306/"+database;
             //tên database
             String usernameString = "root";
             //mật khẩu database

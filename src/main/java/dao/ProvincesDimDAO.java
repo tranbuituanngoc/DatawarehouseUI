@@ -13,7 +13,7 @@ public class ProvincesDimDAO {
     public static Set<String> getArea() {
         Set<String> res = new HashSet<>();
         try {
-            Connection connection = JDBCUtil.getConnection();
+            Connection connection = JDBCUtil.getConnection("projectdw");
             String sql = "SELECT area FROM provinces_dim";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
@@ -32,7 +32,7 @@ public class ProvincesDimDAO {
     public static Provinces getProvinceFromLink(String linkV) {
         Provinces p = null;
         try {
-            Connection connection = JDBCUtil.getConnection();
+            Connection connection = JDBCUtil.getConnection("projectdw");
             String sql = "SELECT * FROM provinces_dim WHERE link=?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, linkV);
@@ -59,7 +59,7 @@ public class ProvincesDimDAO {
     public static Provinces getProvinceFromName(String nameV) {
         Provinces p = null;
         try {
-            Connection connection = JDBCUtil.getConnection();
+            Connection connection = JDBCUtil.getConnection("projectdw");
             String sql = "SELECT * FROM provinces_dim WHERE name=?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, nameV);
@@ -86,7 +86,7 @@ public class ProvincesDimDAO {
     public static Map<String, ArrayList<Provinces>> getProvinceFromArea() {
         Map<String, ArrayList<Provinces>> res = new HashMap<>();
         try {
-            Connection connection = JDBCUtil.getConnection();
+            Connection connection = JDBCUtil.getConnection("projectdw");
             String sql = "SELECT name,link,area FROM provinces_dim WHERE area=?";
             PreparedStatement statement = connection.prepareStatement(sql);
             Set<String> areas = getArea();
